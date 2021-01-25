@@ -14,7 +14,7 @@ namespace PickFromFile
                    {
                        string[] extractedValues = extractValues(opt.FileName);
                        ValuesPicker vp = new ValuesPicker(extractedValues);
-                       string[] picks = vp.Pick(opt.Count);
+                       string[] picks = vp.Pick(opt.Count, opt.CanRepeatValue);
 
                        showPicks(picks);
 

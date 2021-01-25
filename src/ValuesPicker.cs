@@ -9,7 +9,7 @@ namespace PickFromFile
     class ValuesPicker
     {
 
-        private const string COUNT_GREATER_THEN_ALL_VALUES = "Total values to pick ({0}) is greater then all values found ({1}) in input file.";
+        private const string COUNT_GREATER_THEN_ALL_VALUES = "Total values to pick ({0}) is greater than all values found ({1}) in input file.";
         private readonly string[] allValues;
         private readonly Random random;
 
@@ -27,7 +27,7 @@ namespace PickFromFile
             random = new Random();
         }
 
-        public string[] Pick(int count)
+        public string[] Pick(int count, bool canRepeatValues)
         {
             validatePickCount(count);
 
@@ -38,7 +38,11 @@ namespace PickFromFile
             {
                 int index = random.Next(values.Count);
                 pickedValues[i] = values[index];
-                values.RemoveAt(index);
+                if (!canRepeatValues)
+                {
+                    values.RemoveAt(index);
+                }
+                
             }
 
             return pickedValues;

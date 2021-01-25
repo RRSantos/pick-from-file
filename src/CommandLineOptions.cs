@@ -16,5 +16,8 @@ namespace PickFromFile
 
         [Option('c', "count", Required = false, HelpText = "Count of values to pick up.", Default = 1)]
         public int Count { get; set; }
+
+        [Option('r', "can-repeat", Required = false, HelpText = "A value can be picked more than one time?", Default = false)]
+        public bool CanRepeatValue { get; set; }
     }
 }
