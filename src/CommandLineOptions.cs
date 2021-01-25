@@ -22,5 +22,8 @@ namespace PickFromFile
 
         [Option('d', "delay", Required = false, HelpText = "Delay (in seconds) to show each picked value.", Default = 3)]
         public int DelayToShowEachValue { get; set; }
+
+        [Option('s', "separators", Required = false, HelpText = "Characters used to separate values from input file.", Default = "\n\r")]
+        public string ValueSeparators { get; set; }
     }
 }
