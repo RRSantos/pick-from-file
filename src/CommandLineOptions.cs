@@ -19,5 +19,8 @@ namespace PickFromFile
 
         [Option('r', "can-repeat", Required = false, HelpText = "A value can be picked more than one time?", Default = false)]
         public bool CanRepeatValue { get; set; }
+
+        [Option('d', "delay", Required = false, HelpText = "Delay (in seconds) to show each picked value.", Default = 3)]
+        public int DelayToShowEachValue { get; set; }
     }
 }
