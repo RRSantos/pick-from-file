@@ -50,7 +50,7 @@ jobs:
       - name: Publish
         run: dotnet publish src/PickFromFile.sln --configuration Release --output publish --no-build
       - name: Zip Release Windows
-        uses: thedoctor0/zip-release@master
+        run: cd publish && tar.exe -a -c -f PickFromFile-windows.zip *.exe *.dll -C publish && cd ..
         with:
           filename: 'publish/PickFromFile-windows.zip'
           path: 'publish'
