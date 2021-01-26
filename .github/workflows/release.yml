@@ -28,7 +28,6 @@ jobs:
         with:
           filename: 'publish/PickFromFile-linux.zip'
           path: 'publish'
-          directory: 'publish'
           exclusions: '*.json*'
       - uses: actions/upload-artifact@v2
         with:
@@ -55,7 +54,6 @@ jobs:
         with:
           filename: 'publish/PickFromFile-windows.zip'
           path: 'publish'
-          directory: 'publish'
           exclusions: '*.json*'
       - uses: actions/download-artifact@v2
         with:
