@@ -28,7 +28,6 @@ jobs:
         with:
           filename: 'publish/PickFromFile-linux.zip'
           path: 'publish'
-          exclusions: '*.json*'
       - uses: actions/upload-artifact@v2
         with:
           name: PickFromFile-linux
@@ -50,7 +49,7 @@ jobs:
       - name: Publish
         run: dotnet publish src/PickFromFile.sln --configuration Release --output publish --no-build
       - name: Zip Release Windows
-        run: cd publish && tar.exe -a -c -f PickFromFile-windows.zip *.exe *.dll -C publish && cd ..
+        run: cd publish && tar.exe -a -c -f PickFromFile-windows.zip *.exe *.dll *.json -C publish && cd ..
       - uses: actions/download-artifact@v2
         with:
           name: PickFromFile-linux
